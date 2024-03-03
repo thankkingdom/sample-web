@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>トップページ</title>
+</head>
+<body>
+    <form action="/greeting" th:object="${form}" method="post">
+        <div th:each="item : ${checkbox1}">
+            <input type="checkbox" name="greeting" th:value="${item.key}"
+                th:text="${item.value}" th:field="*{greeting}"/>
+        </div>
+        <hr>
+        <button type="submit">決定</button>
+        <button type="reset">キャンセル</button>
+    </form>
+</body>
+</html>
